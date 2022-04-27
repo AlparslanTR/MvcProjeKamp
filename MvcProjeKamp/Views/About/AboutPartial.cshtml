@@ -1,0 +1,30 @@
+﻿<button class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+    Hakkımızda Yazı Gir
+</button>
+<div class="modal" id="modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Hakkımızda Yazı Girişi</h2>
+            </div>
+            <form method="post" action="/About/AboutAdd">
+                <div class="modal-body">
+                    <label>Hakkımızda Metin Girişi</label>
+                    <input type="text" name="AboutDetails1" class="form-control" />
+                    <br />
+                    <label>Hakkımızda Metin Girişi 2</label>
+                    <input type="text" name="AboutDetails2" class="form-control" />
+                    <br />
+                    <label>Hakkımızda Resim URL Linki</label>
+                    <input type="text" name="AboutImage1" class="form-control" />
+                    <br />
+                    <label>Hakkımızda Resim URL Linki 2</label>
+                    <input type="text" name="AboutImage2" class="form-control" />
+                    <br />
+                    <button class="btn btn-primary" style="margin-left:180px;">KAYDET</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>

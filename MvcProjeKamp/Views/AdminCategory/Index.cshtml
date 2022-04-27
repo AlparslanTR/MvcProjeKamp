@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>KATEGORİ AD</th>
+        <th>AÇIKLAMA</th>
+        <th>DURUM</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>BAŞLIKLAR</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.CategoryId</th>
+            <td>@x.CategoryName</td>
+            <td>@x.CategoryDescription</td>
+            <td>@x.CategoryStatus</td>
+            <td><a href="/AdminCategory/CategoryDelete/@x.CategoryId" class="btn btn-danger" style="width:95px;">SİL</a></td>
+            <td><a href="/AdminCategory/CategoryUpdate/@x.CategoryId" class="btn btn-success">GÜNCELLE</a></td>
+            <td><a href="#" class="btn btn-primary">BAŞLIKLAR</a></td>
+        </tr>
+    }
+</table>
+<a href="~/AdminCategory/CategoryAdd" class="btn btn-info">Yeni Kategori</a>
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>

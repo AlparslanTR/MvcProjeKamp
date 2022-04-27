@@ -1,0 +1,80 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewBag.Title = "ReadMail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Action("MessageListMenu","UserPanel")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">Mail Oku</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h5>Konu:@Html.DisplayFor(x => x.MessageSubject)</h5>
+                                <h6>
+                                    Kimden:@Html.DisplayFor(x => x.MessageSenderMail)
+
+                                    <span class="mailbox-read-time float-right" style="font-size:15px;">Gönderilen Tarih: @DateTime.Parse(Html.DisplayFor(x => x.MessageDate).ToString()).ToShortDateString()</span>
+                                </h6>
+                            </div>
+                            <!-- /.mailbox-read-info -->
+                            <!-- /.mailbox-controls -->
+                            <div class="mailbox-read-message">
+                                <p>Mesaj;</p>
+                                <p>@Html.DisplayFor(x => x.MessageContent)</p>
+                            </div>
+                            <div class="mailbox-controls with-border text-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                                    <i class="fas fa-print"></i>
+                                </button>
+                            </div>
+                            <!-- /.mailbox-read-message -->
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+    <script src="/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+</html>
+

@@ -17,7 +17,8 @@ namespace EntityLayer.Concrete
 
 
         public string HeadDate { get; set; }
-        
+        public bool HeadStatus { get; set; }
+
 
         // İlişki category ile
         public int CategoryId { get; set; }

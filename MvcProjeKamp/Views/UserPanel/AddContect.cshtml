@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Content
+@{
+    ViewBag.Title = "AddContect";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddContect", "UserPanel", FormMethod.Post))
+{
+
+     <div class="form-group">
+         @Html.Label("Yazını Yazın")
+         @Html.TextAreaFor(x => x.ContentValue, 4, 30, new { @class = "form-control" })
+         @Html.ValidationMessageFor(x => x.ContentValue)
+         <br />
+         @Html.Label("Başlık Seçin")
+         @Html.DropDownListFor(x => x.HeadId, (List<SelectListItem>)ViewBag.d, new { @class = "form-control" })
+         @Html.ValidationMessageFor(x => x.HeadId)
+    <br />
+         <button class="btn btn-info">Kaydet</button>
+     </div>}
+<script src="/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/AdminLTE-3.0.4/dist/js/demo.js"></script>
+
